@@ -1,0 +1,16 @@
+# data
+pandas
+matplotlib
+lxml
+
+# source
+twstock
+
+# pipeline design pattern
+tpdp==0.1.0
+
+# log
+logging-singleton
+
+# telegram bot
+pyTelegramBotAPI

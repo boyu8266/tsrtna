@@ -1,0 +1,8 @@
+# jupyter lab
+ipykernel
+
+# test
+pytest
+pytest-html
+pytest-cov
+pdoc3

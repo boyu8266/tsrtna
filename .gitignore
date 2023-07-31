@@ -1,0 +1,18 @@
+# env
+.conda
+
+# test
+.coverage
+report
+
+# log
+logs
+
+# custom
+config.ini
+
+# build
+**/*.pyc
+**.egg-info
+build
+dist
