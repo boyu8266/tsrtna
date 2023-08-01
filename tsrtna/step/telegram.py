@@ -1,7 +1,7 @@
-from datetime import datetime
 from typing import Any, Callable
 
 import telebot
+from tabulate import tabulate
 from tpdp import Step
 
 from tsrtna.state import StockState
@@ -16,10 +16,11 @@ class TelegramSendTextInfo(Step):
         userid = state.telegram_userid
 
         bot = telebot.TeleBot(token)
-        message_text = f"""
-[{state.stock}]
-Data Date: {state.datatime}
-Price: {state.price}
-"""
-        bot.send_message(userid, message_text)
+        table = tabulate(
+            state.dataframe,
+            headers='keys',
+            tablefmt='outline',
+            showindex=False
+        )
+        bot.send_message(userid, f'<pre>{table}</pre>', parse_mode='HTML')
         return state

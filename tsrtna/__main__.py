@@ -1,5 +1,7 @@
 import argparse
 
+from tabulate import tabulate
+
 from tsrtna import StockPipeline, __version__, sleep
 from tsrtna.config import Config
 
@@ -14,7 +16,15 @@ def main():
     token = config.telegram_token
     user = config.telegram_userid
     for stock in config.stocks:
-        pipeline.run(stock, token, user)
+        state = pipeline.run(stock, token, user)
+        print(f'{state.stock}, {state.datatime}')
+        table = tabulate(
+            state.dataframe,
+            headers='keys',
+            tablefmt='rounded_outline',
+            showindex=False
+        )
+        print(table)
         sleep()
 
 
