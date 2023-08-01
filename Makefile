@@ -20,7 +20,7 @@ install:
 
 .PHONY: uninstall
 uninstall:
-	pip uninstall ist -y
+	pip uninstall tsrtna -y
 
 .PHONY: reinstall
 reinstall: uninstall install
