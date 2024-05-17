@@ -4,7 +4,7 @@ matplotlib
 lxml
 
 # source
-twstock
+twstock==1.4.0
 
 # pipeline design pattern
 tpdp==0.1.0
