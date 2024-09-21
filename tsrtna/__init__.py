@@ -22,6 +22,6 @@ if logs.log_file == None:
     logs.log_file = os.path.join(folder, f'{time.strftime("%Y%m%d_%H%M%S")}.txt')
 
 
-def sleep(lower: float = 1.0, upper: float = 3.0):
+def sleep(lower: float = 30, upper: float = 60):
     delay = random.uniform(lower, upper)
     time.sleep(delay)
